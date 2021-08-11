@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>
+        Game of Life
+
+        <button onclick="toggleGameState()">Toggle game state</button>
+        <button onclick="resolveGameStep()">Next step</button>
+    </h1>
+
+    <div id="gameField"></div>
+
+    <script>
+        let gameStateActive = false;
+
+        createGameField('gameField', WIDTH, HEIGHT);
+
+        function resolveGameStep() {
+            for (let i = 0; i < WIDTH * HEIGHT; i++) {
+                setFutureCellState(i);
+            }
+
+            for (let i = 0; i < WIDTH * HEIGHT; i++) {
+                if (document.getElementById('cell' + i).classList.contains('quantum-alive')) {
+                    document.getElementById('cell' + i).classList = 'cell alive';
+                } else if (document.getElementById('cell' + i).classList.contains('quantum-dead')) {
+                    document.getElementById('cell' + i).classList = 'cell dead';
+                }
+            }
+        }
+
+        function toggleGameState() {
+            gameStateActive = !gameStateActive;
+            setInterval(() => {
+                if (gameStateActive) {
+                    resolveGameStep()
+                }
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

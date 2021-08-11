@@ -1,0 +1,27 @@
+* {
+    user-select: none;
+}
+
+button {
+    padding: 0.5rem;
+    vertical-align: bottom;
+    border-radius: 10px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.cell {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dead {
+    background-color: white;
+}
+
+.alive {
+    background-color: black;
+}

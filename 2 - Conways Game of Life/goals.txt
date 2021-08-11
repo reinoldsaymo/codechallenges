@@ -1,0 +1,4 @@
+TODO:
+
+- create json structure for cells
+- have game copatibility and easy api programming in mind
